@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Guilded Gauge — Brand Guidelines</title>
+<style>
+None
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+–ink: #5a5550;
+–bg: #faf7f2;
+–parchment: #f0ead9;
+–gold: #9a7a28;
+–gold-light: #e8d5a3;
+–teal: #1e5a6a;
+–teal-light: #c8e0e6;
+–stone: #111009;
+–rule: #ddd6c8;
+–white: #ffffff;
+}
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, ‘Segoe UI’, Helvetica, Arial, sans-serif;
+background: #faf7f2 !important;
+color: var(–ink);
+font-size: 15px;
+line-height: 1.65;
+}
+
+/* COVER */
+.cover {
+background: #111009;
+color: #faf7f2;
+padding: 80px 60px;
+min-height: 320px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+position: relative;
+overflow: hidden;
+}
+.cover::before {
+content: ‘’;
+position: absolute;
+top: -60px; right: -60px;
+width: 300px; height: 300px;
+border-radius: 50%;
+border: 1px solid rgba(184,147,58,0.2);
+}
+.cover::after {
+content: ‘’;
+position: absolute;
+top: -20px; right: -20px;
+width: 180px; height: 180px;
+border-radius: 50%;
+border: 1px solid rgba(184,147,58,0.15);
+}
+.cover-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #b8933a; margin-bottom: 20px; }
+.cover-title { font-family: Georgia, ‘Times New Roman’, serif; font-size: 48px; font-weight: 400; line-height: 1.1; margin-bottom: 12px; color: #faf7f2; }
+.cover-title span { color: #e8d5a3; }
+.cover-sub { color: #8a8070; font-size: 13px; letter-spacing: 0.05em; }
+
+/* LAYOUT */
+.page { max-width: 860px; margin: 0 auto; padding: 56px 32px; }
+.section { margin-bottom: 60px; }
+
+.section-label {
+font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+color: var(–gold); margin-bottom: 20px;
+display: flex; align-items: center; gap: 12px; font-weight: 600;
+}
+.section-label::after { content: ‘’; flex: 1; height: 1px; background: var(–rule); }
+
+h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: 26px; font-weight: 400; color: var(–ink); margin-bottom: 14px;
+}
+h3 {
+font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+color: var(–stone); margin-bottom: 10px; font-weight: 600;
+}
+p { color: var(–ink); max-width: 580px; margin-bottom: 12px; font-size: 15px; }
+
+hr { border: none; border-top: 1px solid var(–rule); margin: 28px 0; }
+
+/* LOGO */
+.logo-box {
+border-radius: 10px; padding: 40px 36px;
+display: flex; align-items: center; gap: 18px; margin-bottom: 14px;
+}
+.logo-box.dark { background: #111009; }
+.logo-box.light { background: var(–parchment); border: 1px solid var(–rule); }
+
+.logo-mark {
+width: 50px; height: 50px; flex-shrink: 0;
+border: 1.5px solid #b8933a; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+}
+.logo-mark svg { width: 24px; height: 24px; }
+
+.wordmark-name {
+font-family: ‘Playfair Display’, serif;
+font-size: 20px; font-weight: 400; line-height: 1; letter-spacing: 0.01em;
+}
+.dark .wordmark-name { color: #faf7f2; }
+.light .wordmark-name { color: var(–ink); }
+.wordmark-name em { color: #b8933a; font-style: normal; }
+
+.wordmark-sub {
+font-size: 9px; letter-spacing: 0.26em; text-transform: uppercase; margin-top: 7px;
+}
+.dark .wordmark-sub { color: #8a8070; }
+.light .wordmark-sub { color: var(–stone); }
+
+/* COLORS */
+.color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 14px; margin-top: 24px; }
+.swatch { border-radius: 8px; overflow: hidden; border: 1px solid var(–rule); }
+.swatch-block { height: 72px; }
+.swatch-info { padding: 10px 12px; background: var(–white); }
+.swatch-name { font-size: 12px; font-weight: 600; color: var(–ink); }
+.swatch-hex { font-size: 11px; color: var(–stone); font-family: monospace; margin-top: 2px; }
+.swatch-role { font-size: 11px; color: var(–stone); margin-top: 4px; line-height: 1.3; }
+
+/* TYPE */
+.type-card {
+background: var(–white); border: 1px solid var(–rule);
+border-radius: 8px; padding: 28px; margin-bottom: 12px;
+}
+.type-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(–gold); font-weight: 600; }
+.t-display { font-family: ‘Playfair Display’, serif; font-size: 36px; font-weight: 400; color: var(–ink); margin-top: 8px; line-height: 1.1; }
+.t-heading { font-family: ‘Playfair Display’, serif; font-size: 22px; font-weight: 400; color: var(–ink); margin-top: 8px; }
+.t-label-ex { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(–gold); font-weight: 600; margin-top: 8px; }
+.t-body { font-size: 15px; color: var(–ink); margin-top: 8px; max-width: 460px; }
+.type-meta { font-size: 11px; color: var(–stone); margin-top: 10px; }
+
+/* VOICE */
+.voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+.voice-card {
+background: var(–white); border: 1px solid var(–rule);
+border-radius: 8px; padding: 22px;
+}
+.voice-card.do { border-left: 3px solid var(–teal); }
+.voice-card.dont { border-left: 3px solid #b03020; }
+.voice-card h4 { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
+.voice-card.do h4 { color: var(–teal); }
+.voice-card.dont h4 { color: #b03020; }
+.voice-card li { font-size: 13px; color: var(–ink); padding: 6px 0; border-bottom: 1px solid var(–rule); list-style: none; }
+.voice-card li:last-child { border-bottom: none; }
+
+.quote-card {
+background: var(–white); border: 1px solid var(–rule);
+border-radius: 8px; padding: 28px; margin-top: 14px;
+}
+.quote-card h3 { margin-bottom: 16px; }
+.quote {
+font-family: ‘Playfair Display’, serif;
+font-size: 17px; color: var(–ink); margin-bottom: 14px; line-height: 1.45;
+}
+.quote:last-child { margin-bottom: 0; }
+
+/* PRODUCT */
+.badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.badge {
+display: inline-flex; align-items: center; gap: 7px;
+padding: 6px 12px 6px 9px; border-radius: 20px; font-size: 12px; font-weight: 500;
+}
+.badge-dot { width: 7px; height: 7px; border-radius: 50%; }
+.badge.knit { background: var(–teal-light); color: var(–teal); }
+.badge.knit .badge-dot { background: var(–teal); }
+.badge.b2 { background: #ede8f5; color: #5a3575; }
+.badge.b2 .badge-dot { background: #5a3575; }
+.badge.b3 { background: #f5ece6; color: #8a3820; }
+.badge.b3 .badge-dot { background: #8a3820; }
+
+.attr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.attr-card { background: var(–white); border: 1px solid var(–rule); border-radius: 8px; padding: 20px; }
+.attr-card h4 { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(–stone); font-weight: 600; margin-bottom: 12px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+.tag.gold { background: #f5edda; color: #7a5e18; }
+.tag.teal { background: var(–teal-light); color: var(–teal); }
+.tag.ink { background: #e8e4de; color: var(–ink); }
+</style>
+
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-label">Brand Guidelines v1.0</div>
+  <div class="cover-title">The Guilded<br><span>Gauge</span></div>
+  <div class="cover-sub">Precision tools for the craft-obsessed</div>
+</div>
+
+<div class="page">
+
+  <!-- FOUNDATION -->
+
+  <div class="section">
+    <div class="section-label">Foundation</div>
+    <h2>Who We Are</h2>
+    <p>We're makers who got tired of making do with tools that didn't quite fit. The Guilded Gauge grew out of that frustration — and a love for artisan communities that deserve better software.</p>
+    <p>Good tools feel like they were made by someone who gets it. That's what we're always chasing — software that fits into a maker's world, not the other way around.</p>
+    <hr>
+    <h3>Mission</h3>
+    <p>To make the tools we wish had existed — beautiful, dependable, and built with the same care our makers put into their own work.</p>
+    <hr>
+    <h3>Tagline</h3>
+    <p style="font-family:'Playfair Display',serif; font-size:20px; color:var(--ink); font-weight:400;">Precision tools for the craft-obsessed.</p>
+  </div>
+
+  <!-- LOGO -->
+
+  <div class="section">
+    <div class="section-label">Identity</div>
+    <h2>Logo</h2>
+    <p>The wordmark pairs Playfair Display with a gold "Gauge" accent. The circular mark echoes a gauge dial and a guild seal.</p>
+
+```
+<div style="margin-top:24px;">
+  <h3 style="margin-bottom:10px;">On Dark</h3>
+  <div class="logo-box dark">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9.5" stroke="#b8933a" stroke-width="1.2"/>
+        <line x1="12" y1="3.5" x2="12" y2="7" stroke="#b8933a" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="12" y1="17" x2="12" y2="20.5" stroke="#b8933a" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="3.5" y1="12" x2="7" y2="12" stroke="#b8933a" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="17" y1="12" x2="20.5" y2="12" stroke="#b8933a" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="12" cy="12" r="1.8" fill="#b8933a"/>
+        <line x1="12" y1="12" x2="15.5" y2="8.5" stroke="#b8933a" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="wordmark-name">The Guilded <em>Gauge</em></div>
+      <div class="wordmark-sub">Craft Tools Studio</div>
+    </div>
+  </div>
+
+  <h3 style="margin-bottom:10px;">On Light</h3>
+  <div class="logo-box light">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9.5" stroke="#b8933a" stroke-width="1.2"/>
+        <line x1="12" y1="3.5" x2="12" y2="7" stroke="#b8933a" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="12" y1="17" x2="12" y2="20.5" stroke="#b8933a" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="3.5" y1="12" x2="7" y2="12" stroke="#b8933a" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="17" y1="12" x2="20.5" y2="12" stroke="#b8933a" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="12" cy="12" r="1.8" fill="#b8933a"/>
+        <line x1="12" y1="12" x2="15.5" y2="8.5" stroke="#b8933a" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="wordmark-name">The Guilded <em>Gauge</em></div>
+      <div class="wordmark-sub">Craft Tools Studio</div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- COLORS -->
+
+  <div class="section">
+    <div class="section-label">Color</div>
+    <h2>Palette</h2>
+    <p>Warm neutrals anchored by gold and teal. Gold signals craft heritage; teal signals precision. Each product can introduce its own accent within this system.</p>
+    <div class="color-grid">
+      <div class="swatch"><div class="swatch-block" style="background:#111009;"></div><div class="swatch-info"><div class="swatch-name">Ink</div><div class="swatch-hex">#111009</div><div class="swatch-role">Text, dark surfaces</div></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#faf7f2;"></div><div class="swatch-info"><div class="swatch-name">Warm White</div><div class="swatch-hex">#faf7f2</div><div class="swatch-role">Page background</div></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#f0ead9;"></div><div class="swatch-info"><div class="swatch-name">Parchment</div><div class="swatch-hex">#f0ead9</div><div class="swatch-role">Cards, surfaces</div></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#9a7a28;"></div><div class="swatch-info"><div class="swatch-name">Gold</div><div class="swatch-hex">#9a7a28</div><div class="swatch-role">Brand accent, labels</div></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#e8d5a3;"></div><div class="swatch-info"><div class="swatch-name">Gold Light</div><div class="swatch-hex">#e8d5a3</div><div class="swatch-role">Tints, highlights</div></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#1e5a6a;"></div><div class="swatch-info"><div class="swatch-name">Teal</div><div class="swatch-hex">#1e5a6a</div><div class="swatch-role">CTAs, links</div></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#c8e0e6; border:1px solid #ddd;"></div><div class="swatch-info"><div class="swatch-name">Teal Light</div><div class="swatch-hex">#c8e0e6</div><div class="swatch-role">Tags, chips</div></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#5a5550;"></div><div class="swatch-info"><div class="swatch-name">Stone</div><div class="swatch-hex">#5a5550</div><div class="swatch-role">Secondary text</div></div></div>
+    </div>
+  </div>
+
+  <!-- TYPE -->
+
+  <div class="section">
+    <div class="section-label">Typography</div>
+    <h2>Type System</h2>
+    <p>Playfair Display for brand moments. Inter for all UI and body copy. Never mix within the same hierarchy level.</p>
+    <div style="margin-top:20px;">
+      <div class="type-card">
+        <div class="type-label">Display — Playfair Display 400</div>
+        <div class="t-display">The Guilded Gauge</div>
+        <div class="type-meta">Covers, hero headlines, App Store headers</div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Heading — Playfair Display 400</div>
+        <div class="t-heading">Precision for makers</div>
+        <div class="type-meta">Section headings, feature titles</div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Label — Inter 600, tracked</div>
+        <div class="t-label-ex">Section Label</div>
+        <div class="type-meta">Section markers, categories, metadata</div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Body — Inter 400</div>
+        <div class="t-body">We build precision tools for makers who take their craft seriously — rooted in genuine understanding of craft communities, designed with care.</div>
+        <div class="type-meta">All body copy, UI text, descriptions</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOICE -->
+
+  <div class="section">
+    <div class="section-label">Voice & Tone</div>
+    <h2>How We Speak</h2>
+    <p>Friendly and knowledgeable. We write like a fellow maker sharing something useful — not a brand broadcasting at an audience. Honest, a little personal, never stiff.</p>
+    <div class="voice-grid">
+      <div class="voice-card do">
+        <h4>✓ We do</h4>
+        <ul>
+          <li>Use craft-specific terminology correctly</li>
+          <li>Acknowledge the skill behind the work</li>
+          <li>Be direct — makers value precision</li>
+          <li>Speak peer-to-peer, not brand-to-customer</li>
+          <li>Say "makers," not "users"</li>
+        </ul>
+      </div>
+      <div class="voice-card dont">
+        <h4>✗ We don't</h4>
+        <ul>
+          <li>Dumb things down or over-explain</li>
+          <li>Use generic tech startup language</li>
+          <li>Be precious or overly formal</li>
+          <li>Overpromise — we're tools, not magic</li>
+          <li>Talk about "users"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote-card">
+      <h3>Example copy</h3>
+      <div class="quote">"Your gauge changed. Your pattern shouldn't have to."</div>
+      <div class="quote">"We've been there — mid-project, wrong gauge, no good options. So we built one."</div>
+      <div class="quote">"The guild is growing."</div>
+    </div>
+  </div>
+
+  <!-- PRODUCT SYSTEM -->
+
+  <div class="section">
+    <div class="section-label">Product Architecture</div>
+    <h2>How Products Fit</h2>
+    <p>Each product inherits the studio's DNA — type, tone, gold mark — while carrying its own accent color for craft identity.</p>
+    <div class="badge-row">
+      <div class="badge knit"><div class="badge-dot"></div>KnitConvert — Fiber Arts</div>
+      <div class="badge b2"><div class="badge-dot"></div>[Future] — Weaving</div>
+      <div class="badge b3"><div class="badge-dot"></div>[Future] — Leatherwork</div>
+    </div>
+    <div class="attr-grid">
+      <div class="attr-card">
+        <h4>Shared across all products</h4>
+        <div class="tag-row">
+          <span class="tag ink">Playfair Display</span>
+          <span class="tag ink">Inter</span>
+          <span class="tag gold">Gold accent</span>
+          <span class="tag ink">Warm White base</span>
+          <span class="tag ink">Gauge mark</span>
+          <span class="tag ink">Tone of voice</span>
+        </div>
+      </div>
+      <div class="attr-card">
+        <h4>Per-product flexibility</h4>
+        <div class="tag-row">
+          <span class="tag teal">Primary accent color</span>
+          <span class="tag teal">Icon style</span>
+          <span class="tag teal">App name</span>
+          <span class="tag teal">Craft terminology</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
