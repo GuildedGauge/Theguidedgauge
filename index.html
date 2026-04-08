@@ -245,7 +245,30 @@ nav { padding: 0 20px; }
     <div class="section-label" style="justify-content:center; color:#9a7a28;">Join the Guild</div>
     <h2 style="color:#faf7f2;">Be first to know what's next</h2>
     <p style="color:#c8bfb0; margin:0 auto 32px;">Sign up to hear about new tools, early access, and updates from the studio. No noise — just the good stuff.</p>
-    <script async data-uid="b6061ed001" src="https://the-guilded-gauge.kit.com/b6061ed001/index.js"></script>
+    <div style="max-width:440px; margin:0 auto;">
+      <form id="waitlist-form" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+        <input id="waitlist-email" type="email" placeholder="your@email.com" required
+          style="flex:1; min-width:220px; background-color:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:13px 16px; font-size:15px; color:#faf7f2; outline:none;"/>
+        <button type="submit"
+          style="background-color:#9a7a28; color:#111009; border:none; border-radius:8px; padding:13px 24px; font-size:15px; font-weight:600; cursor:pointer;">Join</button>
+      </form>
+      <p id="waitlist-msg" style="display:none; color:#c8e0e6; margin-top:16px; font-size:14px;">You're in! We'll be in touch.</p>
+    </div>
+    <script>
+      document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = document.getElementById('waitlist-email').value;
+        try {
+          await fetch('https://app.convertkit.com/forms/b6061ed001/subscriptions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email_address: email })
+          });
+        } catch(err) {}
+        document.getElementById('waitlist-form').style.display = 'none';
+        document.getElementById('waitlist-msg').style.display = 'block';
+      });
+    </script>
     <p class="waitlist-note">No spam. Unsubscribe anytime.</p>
   </div>
 </div>
