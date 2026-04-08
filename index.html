@@ -101,6 +101,8 @@ p { color: #5a5550; margin-bottom: 14px; max-width: 580px; }
 .waitlist-btn { background-color: #9a7a28; color: #111009; border: none; border-radius: 8px; padding: 13px 24px; font-size: 15px; font-weight: 600; cursor: pointer; }
 .waitlist-note { font-size: 12px; color: #8a8070; margin-top: 14px; }
 
+None
+
 .footer-logo { font-family: Georgia, serif; font-size: 14px; color: #8a8070; }
 .footer-logo em { color: #9a7a28; font-style: normal; }
 .footer-copy { font-size: 12px; color: #5a5550; }
@@ -199,11 +201,34 @@ nav { padding: 0 20px; }
         </ul>
         <a class="btn-teal" href="#">Download on the App Store</a>
       </div>
-      <div style="display:flex; gap:12px; align-items:flex-start; justify-content:center;">
-        <img src="https://raw.githubusercontent.com/GuildedGauge/Theguidedgauge/refs/heads/main/IMG_8173.jpeg" alt="KnitConvert screen 1" style="width:31%; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.18);"/>
-        <img src="https://raw.githubusercontent.com/GuildedGauge/Theguidedgauge/refs/heads/main/IMG_8174.jpeg" alt="KnitConvert screen 2" style="width:31%; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.18); margin-top:24px;"/>
-        <img src="https://raw.githubusercontent.com/GuildedGauge/Theguidedgauge/refs/heads/main/IMG_8175.jpeg" alt="KnitConvert screen 3" style="width:31%; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.18); margin-top:48px;"/>
+      <div style="margin-top:40px;">
+        <div style="display:flex; justify-content:center; margin-bottom:16px; gap:8px;">
+          <button onclick="showScreen(0)" id="tab0" style="background:#1e5a6a; color:white; border:none; border-radius:20px; padding:6px 16px; font-size:12px; cursor:pointer; font-weight:600;">Import</button>
+          <button onclick="showScreen(1)" id="tab1" style="background:rgba(255,255,255,0.1); color:#c8bfb0; border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:6px 16px; font-size:12px; cursor:pointer;">Gauge</button>
+          <button onclick="showScreen(2)" id="tab2" style="background:rgba(255,255,255,0.1); color:#c8bfb0; border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:6px 16px; font-size:12px; cursor:pointer;">Output</button>
+        </div>
+        <div style="position:relative; max-width:280px; margin:0 auto;">
+          <img id="screen0" src="https://raw.githubusercontent.com/GuildedGauge/Theguidedgauge/refs/heads/main/IMG_8173.jpeg" style="width:100%; border-radius:16px; box-shadow:0 16px 48px rgba(0,0,0,0.4); display:block;"/>
+          <img id="screen1" src="https://raw.githubusercontent.com/GuildedGauge/Theguidedgauge/refs/heads/main/IMG_8174.jpeg" style="width:100%; border-radius:16px; box-shadow:0 16px 48px rgba(0,0,0,0.4); display:none;"/>
+          <img id="screen2" src="https://raw.githubusercontent.com/GuildedGauge/Theguidedgauge/refs/heads/main/IMG_8175.jpeg" style="width:100%; border-radius:16px; box-shadow:0 16px 48px rgba(0,0,0,0.4); display:none;"/>
+        </div>
+        <div style="display:flex; justify-content:center; gap:6px; margin-top:16px;">
+          <span id="dot0" style="width:6px; height:6px; border-radius:50%; background:#9a7a28; display:inline-block;"></span>
+          <span id="dot1" style="width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.2); display:inline-block;"></span>
+          <span id="dot2" style="width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.2); display:inline-block;"></span>
+        </div>
       </div>
+      <script>
+        function showScreen(i) {
+          [0,1,2].forEach(function(j) {
+            document.getElementById('screen'+j).style.display = j===i ? 'block' : 'none';
+            document.getElementById('dot'+j).style.background = j===i ? '#9a7a28' : 'rgba(255,255,255,0.2)';
+            document.getElementById('tab'+j).style.background = j===i ? '#1e5a6a' : 'rgba(255,255,255,0.1)';
+            document.getElementById('tab'+j).style.color = j===i ? 'white' : '#c8bfb0';
+            document.getElementById('tab'+j).style.border = j===i ? 'none' : '1px solid rgba(255,255,255,0.2)';
+          });
+        }
+      </script>
     </div>
   </div>
 </div>
